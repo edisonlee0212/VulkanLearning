@@ -84,11 +84,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Application.cpp" />
     <ClCompile Include="volk.cpp" />
     <ClCompile Include="VulkanLearning.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\external\volk\volk.h" />
+    <ClInclude Include="Application.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
