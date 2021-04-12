@@ -14,8 +14,6 @@
 #include "volk.h"
 
 
-
-
 struct QueueFamilyIndices {
 	std::optional<uint32_t> graphicsFamily;
 	std::optional<uint32_t> presentFamily;
@@ -56,6 +54,12 @@ private:
 	VkRenderPass renderPass;
 	VkPipelineLayout pipelineLayout;
 	VkPipeline graphicsPipeline;
+
+	std::vector<VkFramebuffer> swapChainFramebuffers;
+	
+	VkCommandPool commandPool;
+
+	std::vector<VkCommandBuffer> commandBuffers;
 	
 	void initWindow();
 
@@ -85,6 +89,17 @@ private:
 	
 	void createGraphicsPipeline();
 
+	void createFramebuffers();
+
+	void createCommandPool();
+
+	void createCommandBuffers();
+
+#pragma region Loop
+	void drawFrame();
+#pragma endregion
+
+	
 #pragma region Helpers
 	VkShaderModule createShaderModule(const std::vector<char>& code);
 	
